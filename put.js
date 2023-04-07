@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
  password: DB_PASSWORD, 
  database: DATABASE 
 }); 
-router.put('/products', /:id(req, res) => { 
+router.put('/products/:id', (req, res) => { 
  connection.query('UPDATE products SET name = ? WHERE id=' + req 
   .params.id, req.body, 
   (error, results) => { 
